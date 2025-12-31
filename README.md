@@ -105,7 +105,6 @@ SQL techniques used:
 
 ## 🗂️ Project Structure
 
-```text
 amazon-ecommerce-sql-analytics/
 │
 ├── README.md
@@ -119,6 +118,8 @@ amazon-ecommerce-sql-analytics/
 │   └── schema_explanation.md
 └── notes/
     └── business_questions.md
+
+
 ▶️ How to Run
 Create a PostgreSQL database
 
