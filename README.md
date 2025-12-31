@@ -138,14 +138,10 @@ Review query outputs directly in PostgreSQL
 
 🎯 What This Project Demonstrates
 
-Strong SQL fundamentals
-
-Fact vs dimension modeling
-
-Data integrity enforcement
-
-Correct revenue modeling
-
-Business-oriented analytical thinking
-
+- Strong SQL fundamentals
+- Fact vs dimension modeling
+- Data integrity enforcement
+- Correct revenue modeling
+- Business-oriented analytical thinking
+  
 This project reflects expectations for data analyst and analytics engineer roles in real companies.
