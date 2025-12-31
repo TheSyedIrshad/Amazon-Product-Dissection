@@ -105,6 +105,7 @@ SQL techniques used:
 
 ## 🗂️ Project Structure
 
+```text 
 amazon-ecommerce-sql-analytics/
 │
 ├── README.md
@@ -118,22 +119,25 @@ amazon-ecommerce-sql-analytics/
 │   └── schema_explanation.md
 └── notes/
     └── business_questions.md
-
+```
 
 ▶️ How to Run
+
 Create a PostgreSQL database
 
 Execute SQL files in order:
 
-sql
-Copy code
+```
 01_schema.sql
 02_constraints.sql
 03_sample_data.sql
 04_analytics_queries.sql
+```
+
 Review query outputs directly in PostgreSQL
 
 🎯 What This Project Demonstrates
+
 Strong SQL fundamentals
 
 Fact vs dimension modeling
@@ -145,4 +149,3 @@ Correct revenue modeling
 Business-oriented analytical thinking
 
 This project reflects expectations for data analyst and analytics engineer roles in real companies.
-
