@@ -1,147 +1,107 @@
-# 🛒 Amazon-Style E-Commerce SQL Analytics Project
+# SQL Data Modeling & Product Dissection
 
-## 📘 Project Overview
+*(🛒 Amazon Case Study)*
 
-This project is a **schema-first SQL analytics case study** based on an Amazon-style e-commerce platform.
+## 📌 Project Overview
 
-The objective is to demonstrate how a data analyst / analytics engineer:
-- translates real business problems into a clean data model
-- designs normalized, analytics-ready schemas
-- enforces data integrity using constraints
-- answers business-critical questions using SQL
+This project focuses on **relational data modeling and SQL-based analysis** using an Amazon-inspired e-commerce system as a case study. The objective is to design, understand, and query a normalized database schema that supports core business operations such as customer orders, payments, shipments, and product management.
 
-The focus is on **correctness, clarity, and business reasoning**, not dataset size or dashboards.
+The project emphasizes **how data is structured**, **how relationships are defined**, and **how SQL is used to extract meaningful insights** from a relational database.
 
 ---
 
-## 🧠 Business Context
+## 🧩 Problem Statement
 
-An e-commerce business fundamentally operates around transactions:
+E-commerce platforms like Amazon operate on complex relational databases where customer activity, orders, payments, shipments, and products are distributed across multiple tables. Without a well-designed schema and efficient SQL queries, it becomes difficult to answer critical business questions related to customer behavior, order performance, and operational workflows.
 
-Customer → Product → Order → Payment → Revenue
-
-To support analytics and decision-making, the business must answer questions such as:
-- Where does revenue come from?
-- How is revenue trending over time?
-- Who are repeat and high-value customers?
-- Which products and categories drive performance?
-- How do payment methods contribute to revenue?
-
-This project models the **core transactional layer** required to answer these questions reliably.
+This project aims to dissect an e-commerce product database, design its relational structure, and use SQL queries to retrieve and analyze business-relevant information.
 
 ---
 
-## 🏗️ Schema Design (Analytics-First)
+## 🎯 Objectives
 
-The schema follows **fact and dimension modeling principles**, with a strong emphasis on grain clarity.
+* Design and understand a **normalized relational database schema**
+* Define **primary and foreign key relationships**
+* Write SQL queries involving:
 
-### Tables Included
-
-**Dimensions**
-- `customers` — customer identity and signup information
-- `categories` — product groupings
-- `products` — product master data
-
-**Facts**
-- `orders` — checkout transactions (order-level grain)
-- `order_items` — purchased items within orders (**revenue grain**)
-- `payments` — financial transactions linked to orders
-
-### Key Design Decisions
-- Revenue is calculated at the **order-item level** (`quantity × unit_price`)
-- Derived metrics (AOV, revenue totals) are **not stored**
-- Foreign keys and constraints are enforced to prevent invalid data
-- Each table has a clearly defined grain
-
-An ER diagram and detailed explanations are available in the `docs/` folder.
+  * Multi-table joins
+  * Aggregations and filtering
+  * Business-focused data extraction
+* Demonstrate how SQL supports real-world product and analytics use cases
 
 ---
 
-## 🚫 Scope Decisions (Intentional)
+## 🗂️ Database Schema Overview
 
-The following domains are intentionally excluded:
-- Delivery and logistics
-- Inventory management
-- Customer reviews and ratings
+The database schema represents a simplified e-commerce system with entities such as:
 
-These belong to **operations or engagement analytics** and are typically handled by separate systems in real-world architectures.  
-They are excluded by design to maintain focus on **core commerce analytics**.
+* Customers
+* Orders and Order Items
+* Products and Categories
+* Payments
+* Shipments
+* Cart and Wishlist
 
----
-
-## 📊 Dataset Strategy
-
-The dataset is **small but realistic by design**.
-
-This project prioritizes:
-- schema correctness
-- analytical logic
-- explainability
-
-The same schema and queries would scale directly to large datasets.  
-This mirrors real analytics workflows: **design → validate → scale**.
+An **Entity Relationship (ER) diagram** is included to visually represent table relationships and data flow across the system.
 
 ---
 
-## 📈 Analytics Covered
+## 🧠 SQL Approach
 
-The project answers the following business questions using SQL:
+The SQL implementation demonstrates:
 
-1. Revenue by product category  
-2. Monthly revenue trends  
-3. Identification of repeat customers  
-4. Top customers by total spend  
-5. Customer ranking and cumulative revenue contribution (window functions)  
-6. Average Order Value (AOV)  
-7. Top products by revenue  
-8. Payment method usage and revenue contribution  
+* Table relationships using **primary and foreign keys**
+* Joins across multiple entities (customers, orders, products, payments)
+* Aggregation queries for totals, counts, and summaries
+* Query logic aligned with common e-commerce business questions
 
-SQL techniques used:
-- multi-table joins with correct grain handling
-- CTEs for clarity and modular logic
-- window functions where they add analytical value
+All SQL logic is documented and organized in a single script for clarity and reproducibility.
 
 ---
 
-## 🗂️ Project Structure
-
-```text 
-amazon-ecommerce-sql-analytics/
-│
-├── README.md
-├── sql/
-│   ├── 01_schema.sql
-│   ├── 02_constraints.sql
-│   ├── 03_sample_data.sql
-│   └── 04_analytics_queries.sql
-├── docs/
-│   ├── er_diagram.png
-│   └── schema_explanation.md
-└── notes/
-    └── business_questions.md
-```
-
-▶️ How to Run
-
-Create a PostgreSQL database
-
-Execute SQL files in order:
+## 📄 Project Files
 
 ```
-01_schema.sql
-02_constraints.sql
-03_sample_data.sql
-04_analytics_queries.sql
+├── Amazon_Product_Dissection.pdf        # Detailed project explanation & analysis
+├── Product Dissection Amazon.sql        # SQL queries and database logic
+├── er_diagram.png                       # Entity Relationship (ER) diagram
+└── README.md
 ```
 
-Review query outputs directly in PostgreSQL
+---
 
-🎯 What This Project Demonstrates
+## 📈 Example Business Questions Addressed
 
-- Strong SQL fundamentals
-- Fact vs dimension modeling
-- Data integrity enforcement
-- Correct revenue modeling
-- Business-oriented analytical thinking
-  
-This project reflects expectations for data analyst and analytics engineer roles in real companies.
+* How many orders has each customer placed?
+* What is the total revenue generated per order or customer?
+* How do orders, payments, and shipments relate operationally?
+* How does database design support scalable e-commerce workflows?
+
+---
+
+## 🛠 Tools & Technologies
+
+* SQL (relational querying and joins)
+* Database design & normalization concepts
+* ER modeling
+---
+
+## 🚀 How to Use This Project
+
+1. Review the ER diagram to understand table relationships
+2. Read the PDF for detailed explanation and business context
+3. Execute the SQL script in a relational database environment
+4. Modify queries to explore additional analytical questions
+
+---
+
+## 📌 Notes
+
+This project focuses on **data modeling clarity and SQL reasoning** rather than large-scale data volume. It demonstrates how well-structured relational databases enable efficient analytics and support real-world product and business operations.
+
+---
+
+## 👤 Contributor
+
+* **Syed Irshad** – Database design, SQL analysis, data modeling, and documentation
+
